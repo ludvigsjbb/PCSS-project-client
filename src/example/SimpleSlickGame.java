@@ -1,4 +1,4 @@
-package example;
+/*package example;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.newdawn.slick.AppGameContainer;
@@ -40,4 +40,6 @@ public class SimpleSlickGame extends BasicGame
 			Logger.getLogger(SimpleSlickGame.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
+
 }
+*/
