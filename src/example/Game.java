@@ -3,6 +3,7 @@ import java.lang.reflect.Array;
 
 import javax.swing.JFrame;
 
+// hi
 public class Game {
 
 	public static String[] CARD_COLORS = {"Yellow", "Blue", "White", "Black", "Red", "Orange", "Purple", "Green", "Wildcard"};
