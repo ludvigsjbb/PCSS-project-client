@@ -8,12 +8,13 @@ public class Canvas extends JPanel {
 
 		public Game game = null;
 		
+		// Dimension stuff, probably irrelevant, but stays here for now
         @Override
         public Dimension getPreferredSize() {
             return new Dimension(200, 200);
         }
-
         @Override
+        // Display example of object and random card draw on the canvas
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
             g.setColor(Color.GREEN);

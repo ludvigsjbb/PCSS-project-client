@@ -3,9 +3,8 @@ import java.lang.reflect.Array;
 
 import javax.swing.JFrame;
 
-// hi
 public class Game {
-
+// initializes the cards 
 	public static String[] CARD_COLORS = {"Yellow", "Blue", "White", "Black", "Red", "Orange", "Purple", "Green", "Wildcard"};
 	public static final int COLORED_CARD_COUNT = 10;
 	public static final int WILDCARD_COUND = 16;
