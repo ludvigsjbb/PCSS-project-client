@@ -27,14 +27,14 @@ public class Canvas extends JPanel {
             // draw cities
             
             // draw cars
-            for (Object car : game.cars) {
+           // for (Object car : game.cars) {
 				// draw car
             	//if(car.owner == player.x)
             		// draw green
             		
             		//if(car owner == null)
             			// draw empty
-			}
+			//}
             // draw decks
             
             // draw user info
