@@ -38,18 +38,20 @@ public class Menu {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setResizable(false);
+		frame.setBounds(200, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
+		boolean isMenu = true;
 		JButton btnCreateNewGame = new JButton("Create New Game");
 		btnCreateNewGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Functionality for creating a new game
+				// clear();
 
 			}
 		});
-		btnCreateNewGame.setBounds(162, 98, 133, 23);
+		btnCreateNewGame.setBounds(325, 263, 150, 24);
 		frame.getContentPane().add(btnCreateNewGame);
 
 		JButton btnJoinGame = new JButton("Join Game");
@@ -59,7 +61,7 @@ public class Menu {
 
 			}
 		});
-		btnJoinGame.setBounds(162, 122, 133, 23);
+		btnJoinGame.setBounds(325, 288, 150, 24);
 		frame.getContentPane().add(btnJoinGame);
 
 		JButton btnNewButton = new JButton("Quit Game");
@@ -68,7 +70,7 @@ public class Menu {
 				System.exit(0);
 			}
 		});
-		btnNewButton.setBounds(162, 149, 133, 23);
+		btnNewButton.setBounds(325, 313, 150, 24);
 		frame.getContentPane().add(btnNewButton);
 	}
 }
