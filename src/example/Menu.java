@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Menu {
+	boolean isMenu = true;
 
 	private JFrame frame;
 
@@ -40,24 +41,32 @@ public class Menu {
 		frame = new JFrame();
 		frame.setResizable(false);
 		frame.setBounds(200, 100, 800, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		boolean isMenu = true;
-		JButton btnCreateNewGame = new JButton("Create New Game");
-		btnCreateNewGame.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				// Functionality for creating a new game
-				// clear();
+		// isMenu = true;
 
-			}
-		});
-		btnCreateNewGame.setBounds(325, 263, 150, 24);
-		frame.getContentPane().add(btnCreateNewGame);
+		if (isMenu == true) {
+			JButton btnCreateNewGame = new JButton("Create New Game");
+			btnCreateNewGame.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					// Functionality for creating a new game
+					// JFrame.dispose();
 
+					JFrame newFrame = new JFrame();
+
+					isMenu = false;
+					System.out.println(isMenu);
+				}
+			});
+			btnCreateNewGame.setBounds(325, 263, 150, 24);
+			frame.getContentPane().add(btnCreateNewGame);
+
+		}
 		JButton btnJoinGame = new JButton("Join Game");
 		btnJoinGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Functionality for join a new game
+				frame.dispose();
 
 			}
 		});
