@@ -20,7 +20,7 @@ public class theMenu {
 
 	private void initialize() {
 		setFrame(new JFrame());
-		getFrame().setBounds(100, 100, 450, 300);
+		getFrame().setBounds(300, 200, 450, 300);
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getFrame().getContentPane().setLayout(null);
 	
