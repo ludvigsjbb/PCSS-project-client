@@ -23,6 +23,7 @@ public class theMenu {
 		getFrame().setBounds(300, 200, 450, 300);
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getFrame().getContentPane().setLayout(null);
+		getFrame().setLocationRelativeTo(null); 
 	
 
 		
@@ -35,7 +36,7 @@ public class theMenu {
 					System.out.println(isMenu);
 				}
 			});
-			btnCreateNewGame.setBounds(181, 76, 119, 23);
+			btnCreateNewGame.setBounds(165, 76, 120, 23);
 			getFrame().getContentPane().add(btnCreateNewGame);
 	
 		JButton btnNewButton = new JButton("Join Game");
@@ -46,7 +47,7 @@ public class theMenu {
 
 			}
 		});
-		btnNewButton.setBounds(181, 110, 119, 23);
+		btnNewButton.setBounds(165, 110, 120, 23);
 		getFrame().getContentPane().add(btnNewButton);
 
 		JButton btnQuit = new JButton("Quit");
@@ -56,7 +57,7 @@ public class theMenu {
 				System.exit(0);
 			}
 		});
-		btnQuit.setBounds(181, 144, 119, 23);
+		btnQuit.setBounds(165, 144, 120, 23);
 		getFrame().getContentPane().add(btnQuit);
 
 	}
