@@ -11,6 +11,7 @@ public class Main extends JFrame {
 	/**
 	 * 
 	 */
+	String name = ""; 
 	private static final long serialVersionUID = 1L;
 	// Makes field item called "player name" 
 	private JTextField playername;
@@ -34,10 +35,10 @@ public class Main extends JFrame {
 		playername.addActionListener(handler);
 	}
 	
-	private class thehandler implements ActionListener{ //class to handle the events
+	public class thehandler implements ActionListener{ //class to handle the events
 		//whenever an action  occurs, this will happen
 		public void actionPerformed(ActionEvent event) {
-			String name = ""; 
+			//String name = ""; 
 			//Takes written and places it in "name";
 			if(event.getSource() == playername)
 				name = String.format("Player %s", event.getActionCommand());
@@ -46,8 +47,8 @@ public class Main extends JFrame {
 			
 			theMenu window = new theMenu();
 			window.getFrame().setVisible(true);
+			
 		} 
-		
 	}
 	
 	

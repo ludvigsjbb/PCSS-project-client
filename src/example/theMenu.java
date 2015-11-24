@@ -17,15 +17,30 @@ public class theMenu {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-
+    
+	
+	
 	private void initialize() {
 		setFrame(new JFrame());
 		getFrame().setBounds(300, 200, 450, 300);
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getFrame().getContentPane().setLayout(null);
 		getFrame().setLocationRelativeTo(null); 
-	
+		
+		Main fagoot = new Main(); 
+		
 
+		JButton btnHello = new JButton("Hello, "+ fagoot.name);
+		btnHello.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				System.out.println("hello" + fagoot.name);
+			
+			}
+		});
+		btnHello.setBounds(165, 42, 120, 23);
+		getFrame().getContentPane().add(btnHello);
+		
 		
 			JButton btnCreateNewGame = new JButton("Create New Game");
 			btnCreateNewGame.addActionListener(new ActionListener() {
