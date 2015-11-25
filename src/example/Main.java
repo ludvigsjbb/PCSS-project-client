@@ -11,7 +11,7 @@ public class Main extends JFrame {
 	/**
 	 * 
 	 */
-	String name = ""; 
+	public String name; 
 	private static final long serialVersionUID = 1L;
 	// Makes field item called "player name" 
 	private JTextField playername;
@@ -48,7 +48,9 @@ public class Main extends JFrame {
 			theMenu window = new theMenu();
 			window.getFrame().setVisible(true);
 			
+			
 		} 
+		
 	}
 	
 	

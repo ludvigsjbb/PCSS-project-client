@@ -29,6 +29,8 @@ public class theMenu {
 		
 		Main fagoot = new Main(); 
 		
+		
+		
 
 		JButton btnHello = new JButton("Hello, "+ fagoot.name);
 		btnHello.addActionListener(new ActionListener() {
