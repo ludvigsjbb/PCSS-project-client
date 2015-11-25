@@ -1,6 +1,9 @@
 //import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+
+
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -27,16 +30,16 @@ public class theMenu {
 		getFrame().getContentPane().setLayout(null);
 		getFrame().setLocationRelativeTo(null); 
 		
-		Main fagoot = new Main(); 
-		
-		
+	
 		
 
-		JButton btnHello = new JButton("Hello, "+ fagoot.name);
+		
+
+		JButton btnHello = new JButton("Hello, ");
 		btnHello.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				System.out.println("hello" + fagoot.name);
+				System.out.println("hello");
 			
 			}
 		});
