@@ -10,7 +10,6 @@ public class theMenu {
 	
 	
 	public Boolean hosting;
-	public Boolean joining;
 	//boolean isMenu;
 	private JFrame frame;
 	public JTextField myname;
@@ -26,6 +25,7 @@ public class theMenu {
 	public String player5;
 	
 	public theMenu() {
+		
 		initialize();
 	}
 
@@ -42,29 +42,14 @@ public class theMenu {
 		getFrame().getContentPane().setLayout(null);
 		getFrame().setLocationRelativeTo(null); 
 		
-	
+		hosting = false;
 		
-
-		
-
-		JButton btnHello = new JButton("Hello, ");  // in the brackets : + myplayer.getName()  
-		btnHello.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-				System.out.println("hello " ); // in the brackets: + myplayer.getName()
-			
-			}
-		});
-		btnHello.setBounds(165, 42, 120, 23);
-		getFrame().getContentPane().add(btnHello);
-		
-		
-		
+			// creating "new game" button.
 			JButton btnCreateNewGame = new JButton("Create New Game");
 			btnCreateNewGame.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					System.out.println("New Game created...");
-					boolean hosting = false;
+					hosting = true;
 					getFrame().setVisible(true);
 					GoLobby();
 				}
@@ -77,9 +62,10 @@ public class theMenu {
 		JButton btnNewButton = new JButton("Join Game");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
 				System.out.println("Joining game ...");
-
+				hosting = false;
+				getFrame().setVisible(true);
+				GoLobby();
 			}
 		});
 		btnNewButton.setBounds(165, 110, 120, 23);
@@ -98,7 +84,6 @@ public class theMenu {
 	}
 	
 	public void GoLobby(){
-		
 	hostName = "";
 	player2 = "Player 2";
 	player3 = "Player 3";
@@ -121,10 +106,17 @@ public class theMenu {
 		playername5 = new JTextField(player5, 10);
 		
 		JButton btnStartGame = new JButton("Start Game"); 
-		
 		btnStartGame.setBounds(165, 165, 120, 23);
-			  myname.setBounds(165, 40, 120, 23);
 		
+		//Host's name... 
+			  myname.setBounds(165, 40, 120, 23);
+		//Only editable by him.
+			  if(hosting == true){
+				  myname.setEditable(true);
+			  }else if(hosting == false){ 
+				  myname.setEditable(false);}
+			   
+			  //player fields in the lobby. 
 		playername2.setBounds(165, 65, 120, 23);
 		playername2.setEditable(false);
 		
@@ -137,9 +129,9 @@ public class theMenu {
 		playername5.setBounds(165, 140, 120, 23);
 		playername5.setEditable(false);
 	
-		//if(hosting == true){
+		if(hosting == true){
 		Hostedlobby.add(btnStartGame);
-		//}
+		}
 		Hostedlobby.add(myname);
 		Hostedlobby.add(playername2);
 		Hostedlobby.add(playername3);
