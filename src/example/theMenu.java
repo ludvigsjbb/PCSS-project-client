@@ -8,16 +8,17 @@ import java.awt.event.ActionEvent;
 
 public class theMenu { 
 	
-	
+	// hosting for startgame, true if pressed
 	public Boolean hosting;
-	//boolean isMenu;
 	private JFrame frame;
-	public JTextField myname;
-	public JTextField playername2;
-	public JTextField playername3;
-	public JTextField playername4;
-	public JTextField playername5;
+	// names of players, myname being the host
+	public JTextField myName;
+	public JTextField playerName2;
+	public JTextField playerName3;
+	public JTextField playerName4;
+	public JTextField playerName5;
 	
+	// displaying playernames in lobby
 	public String hostName;
 	public String player2;
 	public String player3;
@@ -37,11 +38,15 @@ public class theMenu {
 	
 	private void initialize() {
 		setFrame(new JFrame());
+		// size and location of the menu
 		getFrame().setBounds(300, 200, 450, 300);
+		// program closes when pressed "exit"
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getFrame().getContentPane().setLayout(null);
+		// players wont be able to resize
 		getFrame().setLocationRelativeTo(null); 
 		
+		// going to turn true when pressed "Start Game"
 		hosting = false;
 		
 			// creating "new game" button.
@@ -71,6 +76,7 @@ public class theMenu {
 		btnNewButton.setBounds(165, 110, 120, 23);
 		getFrame().getContentPane().add(btnNewButton);
 
+		// whole program closes when pressed "Quit"
 		JButton btnQuit = new JButton("Quit");
 		btnQuit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -83,6 +89,7 @@ public class theMenu {
 
 	}
 	
+	// lobby display
 	public void GoLobby(){
 	hostName = "";
 	player2 = "Player 2";
@@ -91,60 +98,64 @@ public class theMenu {
 	player5 = "Player 5";
 	JFrame	Hostedlobby = new JFrame();
 		
+	// same location and size as menu
 	Hostedlobby.setBounds(300, 200, 450, 300);
 	Hostedlobby.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	Hostedlobby.getContentPane().setLayout(null);
 	Hostedlobby.setLocationRelativeTo(null); 
 	Hostedlobby.setVisible(true);
-		System.out.println("Hosting Lobby");
+	
+	// going to print to console when hosting lobby
+	System.out.println("Hosting Lobby");
 		
 		
-		myname		= new JTextField(hostName,10);
-		playername2 = new JTextField(player2, 10);
-		playername3 = new JTextField(player3, 10);
-		playername4 = new JTextField(player4, 10);
-		playername5 = new JTextField(player5, 10);
+		myName		= new JTextField(hostName,10);
+		playerName2 = new JTextField(player2, 10);
+		playerName3 = new JTextField(player3, 10);
+		playerName4 = new JTextField(player4, 10);
+		playerName5 = new JTextField(player5, 10);
 		
 		JButton btnStartGame = new JButton("Start Game"); 
 		btnStartGame.setBounds(165, 165, 120, 23);
 		
 		//Host's name... 
-			  myname.setBounds(165, 40, 120, 23);
+			  myName.setBounds(165, 40, 120, 23);
 		//Only editable by him.
 			  if(hosting == true){
-				  myname.setEditable(true);
+				  myName.setEditable(true);
 			  }else if(hosting == false){ 
-				  myname.setEditable(false);}
-			   
-			  //player fields in the lobby. 
-		playername2.setBounds(165, 65, 120, 23);
-		playername2.setEditable(false);
+				  myName.setEditable(false);}
+			    
+			  //player fields in the lobby, they can not edit their names (in future they will)
+		playerName2.setBounds(165, 65, 120, 23);
+		playerName2.setEditable(false);
 		
-		playername3.setBounds(165, 90, 120, 23);
-		playername3.setEditable(false);
+		playerName3.setBounds(165, 90, 120, 23);
+		playerName3.setEditable(false);
 		
-		playername4.setBounds(165, 115, 120, 23);
-		playername4.setEditable(false);
+		playerName4.setBounds(165, 115, 120, 23);
+		playerName4.setEditable(false);
 		
-		playername5.setBounds(165, 140, 120, 23);
-		playername5.setEditable(false);
+		playerName5.setBounds(165, 140, 120, 23);
+		playerName5.setEditable(false);
 	
+		// when lobby appears, place the Start Game button and players
 		if(hosting == true){
 		Hostedlobby.add(btnStartGame);
 		}
-		Hostedlobby.add(myname);
-		Hostedlobby.add(playername2);
-		Hostedlobby.add(playername3);
-		Hostedlobby.add(playername4);
-		Hostedlobby.add(playername5);
+		Hostedlobby.add(myName);
+		Hostedlobby.add(playerName2);
+		Hostedlobby.add(playerName3);
+		Hostedlobby.add(playerName4);
+		Hostedlobby.add(playerName5);
 		
 		
 	
-		
-		myname.addActionListener(new ActionListener(){
+		// registers name
+		myName.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
 				
-				if(event.getSource() == myname){
+				if(event.getSource() == myName){
 					hostName = String.format("Player %s", event.getActionCommand());
 					
 				}
@@ -153,6 +164,7 @@ public class theMenu {
 			
 		});
 		
+		// actionlistener for Start Game button
 		btnStartGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Player me = new Player(0,0, "");
