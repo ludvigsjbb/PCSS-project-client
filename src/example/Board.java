@@ -11,6 +11,7 @@ public class Board {
 	
 	
 	public void gameboard(){
+		
 		JFrame board = new JFrame();
 		board.setBounds(0, 0, 800, 600);
 		board.setLocationRelativeTo(null);
