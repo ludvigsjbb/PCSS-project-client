@@ -6,6 +6,11 @@ public class Execute {
 		theMenu window = new theMenu();
 		window.getFrame().setVisible(true);
 		
+		
+		
+		Board game = new Board();
+		game.gameboard();
+		
 	}
 
 }
