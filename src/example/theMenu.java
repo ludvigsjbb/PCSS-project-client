@@ -109,11 +109,11 @@ public class theMenu {
 	System.out.println("Hosting Lobby");
 		
 		
-		myName		= new JTextField(hostName,10);
-		playerName2 = new JTextField(player2, 10);
-		playerName3 = new JTextField(player3, 10);
-		playerName4 = new JTextField(player4, 10);
-		playerName5 = new JTextField(player5, 10);
+		myName		= new JTextField(hostName, 10);
+		playerName2 = new JTextField(player2 , 10);
+		playerName3 = new JTextField(player3 , 10);
+		playerName4 = new JTextField(player4 , 10);
+		playerName5 = new JTextField(player5 , 10);
 		
 		JButton btnStartGame = new JButton("Start Game"); 
 		btnStartGame.setBounds(165, 165, 120, 23);
