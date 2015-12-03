@@ -1,5 +1,7 @@
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import java.awt.*;
+import javax.swing.*;
 
 public class Board {
 
@@ -35,7 +37,6 @@ public class Board {
 
 		
 	}
-	
 	
 	
 	public void gameboard(){
