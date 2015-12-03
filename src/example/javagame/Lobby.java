@@ -10,12 +10,12 @@ import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
 public class Lobby extends BasicGameState {
+	
+//	boolean host = false;
 	Image StartGame;
-	int[] players;
-	boolean open;
-	boolean closed;
-	boolean full;
+	
 	public Lobby (int state) {
+		
 		
 		//arraylist
 		String p1 = "playerone";
@@ -33,23 +33,35 @@ public class Lobby extends BasicGameState {
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		StartGame.draw(400, 510);
+		
+		Menu fagoot = new Menu(0);
+		boolean checker = fagoot.host;
+
+		if (checker == true) {
+			StartGame.draw(400, 510);
+		}
 	}
-	
+
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+		
+		Menu fagoot = new Menu(0);
+		boolean checker = fagoot.host;
+		
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
-		
-		//Start
-		if( (posX>400 && posX<600)&&( posY>150 && posY < 190 ) ){
-			if(Mouse.isButtonDown(0)){
-				sbg.enterState(2);
+
+		// Start
+
+		if (checker == true) {
+			if ((posX > 400 && posX < 600) && (posY > 150 && posY < 190)) {
+				if (Mouse.isButtonDown(0)) {
+					sbg.enterState(2);
+
+				}
 			}
+
 		}
-		
-		
 	}
-	
 	public int getID() {
 		
 		return 1;
