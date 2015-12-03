@@ -1,5 +1,7 @@
 package javagame;
 
+import java.util.ArrayList;
+
 import org.lwjgl.input.Mouse;
 
 //hopefully it worked
@@ -9,8 +11,20 @@ import org.newdawn.slick.state.*;
 
 public class Lobby extends BasicGameState {
 	Image StartGame;
+	int[] players;
+	boolean open;
+	boolean closed;
+	boolean full;
 	public Lobby (int state) {
 		
+		//arraylist
+		String p1 = "playerone";
+		ArrayList<String> players = new ArrayList<String>();
+		players.add(p1);
+		
+		players.get(0);
+		players.remove(0);
+		players.trimToSize();
 	}
 	
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
@@ -27,11 +41,13 @@ public class Lobby extends BasicGameState {
 		int posY = Mouse.getY();
 		
 		//Start
-		if( (posX>400 && posX<600)&&( posY>50 && posY < 90 ) ){
+		if( (posX>400 && posX<600)&&( posY>150 && posY < 190 ) ){
 			if(Mouse.isButtonDown(0)){
 				sbg.enterState(2);
 			}
 		}
+		
+		
 	}
 	
 	public int getID() {

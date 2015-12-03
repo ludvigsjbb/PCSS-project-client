@@ -33,19 +33,19 @@ public class Menu extends BasicGameState {
 			int posY = Mouse.getY();
 			
 			//joining game
-			if( (posX>400 && posX<600)&&( posY>460 && posY < 500 ) ){
+			if( (posX>400 && posX<600)&&( posY>560 && posY < 600 ) ){
 				if(Mouse.isButtonDown(0)){
 					sbg.enterState(1);
 				}
 			}
 			//creating a lobby.
-			if( (posX>400 && posX<600)&&( posY>395 && posY < 425 ) ){
+			if( (posX>400 && posX<600)&&( posY>495 && posY < 525 ) ){
 				if(Mouse.isButtonDown(0)){
 					sbg.enterState(1);
 				}
 			}
 			
-			if( (posX>400 && posX<600)&&( posY>320 && posY < 350 ) ){
+			if( (posX>400 && posX<600)&&( posY>420 && posY < 450 ) ){
 				if(Mouse.isButtonDown(0)){
 					System.exit(0);
 				}

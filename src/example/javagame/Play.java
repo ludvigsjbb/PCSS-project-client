@@ -17,6 +17,9 @@ public class Play extends BasicGameState {
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		
+		Image board = new Image("res/TicketToRidePNG.png");
+		g.drawImage(board, 0, 50);
+		
 	}
 	
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
