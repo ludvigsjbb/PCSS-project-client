@@ -8,12 +8,13 @@ public class Game extends StateBasedGame {
 	
 	public static final String gameName = "Ticket To Ride";
 	public static final int menu = 0;
-	public static final int play = 1;
-	
+	public static final int lobby = 1;
+	public static final int play = 2;
 	public Game(String gameName) {
 		
 		super(gameName);
 		this.addState(new Menu(menu));
+		this.addState(new Lobby(lobby));
 		this.addState(new Play(play));
 		
 	}
@@ -22,6 +23,7 @@ public class Game extends StateBasedGame {
 		
 		this.getState(menu).init(gc, this);
 		this.getState(play).init(gc, this);
+		this.getState(lobby).init(gc,this);
 		this.enterState(menu);
 
 	}
@@ -34,7 +36,7 @@ public class Game extends StateBasedGame {
 		try{
 			
 			appgc = new AppGameContainer(new Game(gameName));
-			appgc.setDisplayMode(800, 600, false);
+			appgc.setDisplayMode(950, 600, false);
 			appgc.start();
 			
 			

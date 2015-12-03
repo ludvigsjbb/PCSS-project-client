@@ -2,22 +2,54 @@ package javagame;
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
+import org.lwjgl.input.Mouse;
 
 public class Menu extends BasicGameState {
 	
-	public Menu(int state) {
-		
+
+	Image HostGame;
+	Image JoinGame;
+	Image Quit;
+	
+	
+	public Menu(int state) {	
 	}
 	
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		
+		JoinGame = new Image("res/Start.png");
+		HostGame = new Image("res/Host a game.png");
+		Quit	 = new Image("res/quit.png");
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		
+		g.drawString("Ticket to Ride!", 430, 50);
+		JoinGame.draw(400,100);
+		HostGame.draw(400,175);
+		Quit.draw(400, 250);
 	}
 	
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+			int posX = Mouse.getX();
+			int posY = Mouse.getY();
+			
+			//joining game
+			if( (posX>400 && posX<600)&&( posY>460 && posY < 500 ) ){
+				if(Mouse.isButtonDown(0)){
+					sbg.enterState(1);
+				}
+			}
+			//creating a lobby.
+			if( (posX>400 && posX<600)&&( posY>395 && posY < 425 ) ){
+				if(Mouse.isButtonDown(0)){
+					sbg.enterState(1);
+				}
+			}
+			
+			if( (posX>400 && posX<600)&&( posY>320 && posY < 350 ) ){
+				if(Mouse.isButtonDown(0)){
+					System.exit(0);
+				}
+			}
 		
 	}
 	
