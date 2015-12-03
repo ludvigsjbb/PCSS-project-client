@@ -7,11 +7,8 @@ public class Main {
 		theMenu window = new theMenu();
 		window.getFrame().setVisible(true);
 		
-		imageDisplay gui = new imageDisplay();
-		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		gui.setVisible(true);
-		gui.pack();
-		gui.setTitle("Display the image");
+		imageDisplay kaka = new imageDisplay();
+		kaka.test();
 		
 		Board game = new Board();
 		game.gameboard();
