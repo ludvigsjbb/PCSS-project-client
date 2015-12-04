@@ -69,15 +69,15 @@ public class Lobby extends BasicGameState {
 		//Open close lobby button
 		if(Menu.menuHost == true){
 			if ((posX > 620 && posX < 820) && (posY > 150 && posY < 190)) {
-				if (Mouse.isButtonDown(0) && checkifopen == false ) {
+				if (Mouse.isButtonDown(0) && checkifopen == true ) {
 					
-					checkifopen = true;
+					checkifopen = false;
 				}
-			}else if (checkifopen == true){
-				checkifopen = false;
+			else if (Mouse.isButtonDown(0) && checkifopen == false){
+				checkifopen = true;
 			}
 			}
-
+		}
 		
 		
 		// Start
