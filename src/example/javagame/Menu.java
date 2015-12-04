@@ -45,9 +45,10 @@ public class Menu extends BasicGameState {
 		// joining game
 		if ((posX > 400 && posX < 600) && (posY > 560 && posY < 600)) {
 			if (Mouse.isButtonDown(0)) {
-				Player self = new Player("");
-				Lobby lobby = new Lobby("",self,"joinLobby");
+				Player self = new Player("tmp");
+				Lobby lobby = new Lobby("tmp",self,"joinLobby");
 				ClientProgram.client.sendTCP(lobby);
+				System.out.println("Sent join request");
 				sbg.enterState(1);
 				// join = true;
 			}
@@ -59,6 +60,7 @@ public class Menu extends BasicGameState {
 				Player self = new Player("player1");
 				Lobby lobby = new Lobby("New Lobby",self,"createLobby");
 				ClientProgram.client.sendTCP(lobby);
+				System.out.println("Sent create request");
 				sbg.enterState(1);
 			}
 		}

@@ -86,13 +86,13 @@ public class ClientProgram extends Listener {
 		}else if(p instanceof Player){
 			Player plr = (Player) p;
 				if(plr.commandString.equalsIgnoreCase("joinLobby")){
-					if(GameLobby.slot2 == null){
+					if(GameLobby.slot2.contains("empty")){
 						GameLobby.slot2 = "player2";
-					}else if(GameLobby.slot3 == null){
+					}else if(GameLobby.slot3.contains("empty")){
 						GameLobby.slot3 = "player3";
-					}else if(GameLobby.slot4 == null){
+					}else if(GameLobby.slot4.contains("empty")){
 						GameLobby.slot4 = "player4";
-					}else if(GameLobby.slot5 == null){
+					}else if(GameLobby.slot5.contains("empty")){
 						GameLobby.slot5 = "player5";
 					}
 				}
