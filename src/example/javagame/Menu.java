@@ -3,11 +3,11 @@ package javagame;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
-import java.util.Set;
-
 import org.lwjgl.input.Mouse;
 
 public class Menu extends BasicGameState {
+	
+	public static boolean menuHost;
 	
 	Image HostGame;
 	Image JoinGame;
@@ -52,8 +52,7 @@ public class Menu extends BasicGameState {
 			//creating a lobby.
 			if( (posX>400 && posX<600)&&( posY>495 && posY < 525 ) ){
 				if(Mouse.isButtonDown(0)){
-					host = true;
-					this.host = host;
+					menuHost = true;
 					sbg.enterState(1);
 				}
 			}
