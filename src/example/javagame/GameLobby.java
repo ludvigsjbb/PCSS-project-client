@@ -98,8 +98,28 @@ public class GameLobby extends BasicGameState {
 				if (Mouse.isButtonDown(0) && checkifopen == true) {
 
 					checkifopen = false;
+					try {
+						Thread.sleep(500);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					Player pl = new Player("tmp");
+					Lobby lobby = new Lobby("tmp",pl,"closeLobby");
+					lobby.setState("closeLobby");
+					ClientProgram.client.sendTCP(lobby);
 				} else if (Mouse.isButtonDown(0) && checkifopen == false) {
-					checkifopen = true;
+					checkifopen = true;					
+					try {
+						Thread.sleep(500);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					Player pl = new Player("tmp");
+					Lobby lobby = new Lobby("tmp",pl,"openLobby");
+					lobby.setState("openLobby");
+					ClientProgram.client.sendTCP(lobby);
 				}
 			}
 		}
