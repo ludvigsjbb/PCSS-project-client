@@ -8,13 +8,13 @@ public class Game extends StateBasedGame {
 	
 	public static final String gameName = "Ticket To Ride";
 	public static final int menu = 0;
-	public static final int lobby = 1;
+	public static final int gamelobby = 1;
 	public static final int play = 2;
 	public Game(String gameName) {
 		
 		super(gameName);
 		this.addState(new Menu(menu));
-		this.addState(new Lobby(lobby));
+		this.addState(new GameLobby(gamelobby));
 		this.addState(new Play(play));
 		
 	}
@@ -23,14 +23,19 @@ public class Game extends StateBasedGame {
 		
 		this.getState(menu).init(gc, this);
 		this.getState(play).init(gc, this);
-		this.getState(lobby).init(gc,this);
+		this.getState(gamelobby).init(gc,this);
 		this.enterState(menu);
 
 	}
 	
 
 	public static void main(String[] args) {
-		
+		try {
+			ClientProgram.update();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		AppGameContainer appgc;
 		
 		try{

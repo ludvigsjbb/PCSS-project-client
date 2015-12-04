@@ -2,98 +2,66 @@ package javagame;
 
 import java.util.ArrayList;
 
-import org.lwjgl.input.Mouse;
+public class Lobby {
 
-//hopefully it worked
-
-import org.newdawn.slick.*;
-import org.newdawn.slick.state.*;
-
-
-public class Lobby extends BasicGameState {
+	protected String lobbyName;
+	protected String state;
+	protected ArrayList<Player> players = new ArrayList<Player>();
+	protected int runtime;
+	public String commandString;
 	
-//	boolean host = false;
-	Image StartGame;
-	Image lobbyfull;
-	Image closed;
-	Image open;
+	//no-arg constructor because Kryonet requires it. 
+	Lobby(){}
 	
-	public boolean checkifopen;
-	
-	public Lobby (int state) {
-		
-		
-		this.checkifopen = true;
-		
-		//arraylist
-		String p1 = "playerone";
-		ArrayList<String> players = new ArrayList<String>();
-		players.add(p1);
-		players.get(0);
-		players.remove(0);
-		players.trimToSize();
+	Lobby(String lobbyName, Player player, String command) {
+		this.lobbyName = lobbyName;
+		this.players.add(player);
+		this.commandString = command;
 	}
-	
-	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		StartGame = new Image("res/StartGame.png");
-		lobbyfull = new Image("res/lobbyfull.png");
-		closed = new Image("res/closed.png");
-		open = new Image("res/open.png");
-	}
-	
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		
-		if (Menu.menuHost == true){  //not working
-			StartGame.draw(400, 510);
-			}
-		
-		if(checkifopen == false){
-			closed.draw(620, 510);
-		}else{
-			// checkifopen = true;
-			open.draw(620, 510);
+
+
+	//Player join
+	public String joinLobby(Player newPlayer) {
+		if (players.size() <= 5) {				//The game can only hold a maximum of 5 players
+			this.players.add(newPlayer);		//New player is added to the next spot in the array
+			return "Joined lobby";				//String is returned to player, client
+		} else {
+			return "Lobby is full";				//String is returned if full
 		}
-		
-			//if (players.get(4) != null){ //ERRRRRROOOOOR HERE!!
-				//lobbyfull.draw(450, 510);
-			//}
 	}
-
-	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
-		
 	
-		
-		int posX = Mouse.getX();
-		int posY = Mouse.getY();
-
-		//Open close lobby button
-		if(Menu.menuHost == true){
-			if ((posX > 620 && posX < 820) && (posY > 150 && posY < 190)) {
-				if (Mouse.isButtonDown(0) && checkifopen == true ) {
-					
-					checkifopen = false;
-				}
-			else if (Mouse.isButtonDown(0) && checkifopen == false){
-				checkifopen = true;
-			}
-			}
-		}
-		
-		
-		// Start
-			if(Menu.menuHost == true){
-			if ((posX > 400 && posX < 600) && (posY > 150 && posY < 190)) {
-				if (Mouse.isButtonDown(0)) {
-					sbg.enterState(2);
-
-				}
-			}
-			}
-		
+	
+	//Get and Set
+	//Lobby name
+	public String getLobbyName() {
+		return lobbyName;
 	}
-	public int getID() {
-		
-		return 1;
+	
+	public void setLobbyName(String lobbyName) {
+		this.lobbyName = lobbyName;
 	}
-
+	//end lobby name
+	
+	//State
+	public String getState() {
+		return state;
+	}
+	
+	public void setState(String state) {
+		this.state = state;
+	}
+	//end state
+	
+	//Player array
+	public ArrayList<Player> getPlayer() {
+		return players;
+	}
+	//end player
+	
+	//Runtime
+	public int getRuntime() {
+		return runtime;
+	}
+	//end runtime
+	//end Get and Set
 }
