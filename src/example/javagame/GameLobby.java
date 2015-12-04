@@ -16,7 +16,7 @@ public class GameLobby extends BasicGameState {
 	Image lobbyfull;
 	Image closed;
 	Image open;
-	
+	static int index = 0;
 	
 	
 	public static String slot2 = "empty";
@@ -128,8 +128,12 @@ public class GameLobby extends BasicGameState {
 		if (Menu.menuHost == true) {
 			if ((posX > 400 && posX < 600) && (posY > 150 && posY < 190)) {
 				if (Mouse.isButtonDown(0)) {
-					sbg.enterState(2);
-
+					Player pl = new Player("tmp");
+					Lobby lobby = new Lobby("tmp",pl,"startLobby");
+					ClientProgram.client.sendTCP(lobby);
+					index = 2;
+					sbg.enterState(index);
+						
 				}
 			}
 		}

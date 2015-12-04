@@ -80,8 +80,10 @@ public class ClientProgram extends Listener {
 		//If the class of the packet is Lobby then do the following
 		if (p instanceof Lobby){
 			Lobby lobby = (Lobby) p;
-				if(lobby.commandString.equalsIgnoreCase("update")){
-
+				if(lobby.commandString.equalsIgnoreCase("closeLobby")){
+					System.out.println("The lobby is closed, cannot join");
+				}else if(lobby.commandString.equalsIgnoreCase("startLobby")){
+					GameLobby.index = 2;
 				}
 		}else if(p instanceof Player){
 			Player plr = (Player) p;
