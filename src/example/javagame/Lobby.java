@@ -51,14 +51,14 @@ public class Lobby extends BasicGameState {
 
 		// Start
 
-	
+			if(Menu.menuHost == true){
 			if ((posX > 400 && posX < 600) && (posY > 150 && posY < 190)) {
 				if (Mouse.isButtonDown(0)) {
 					sbg.enterState(2);
 
 				}
 			}
-
+			}
 		
 	}
 	public int getID() {
