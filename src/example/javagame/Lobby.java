@@ -15,7 +15,6 @@ public class Lobby extends BasicGameState {
 //	boolean host = false;
 	Image StartGame;
 	Image lobbyfull;
-	
 	public Lobby (int state) {
 		
 		
@@ -23,7 +22,6 @@ public class Lobby extends BasicGameState {
 		String p1 = "playerone";
 		ArrayList<String> players = new ArrayList<String>();
 		players.add(p1);
-		
 		players.get(0);
 		players.remove(0);
 		players.trimToSize();
