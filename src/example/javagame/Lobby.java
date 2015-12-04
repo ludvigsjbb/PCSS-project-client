@@ -23,7 +23,7 @@ public class Lobby extends BasicGameState {
 	public Lobby (int state) {
 		
 		
-		checkifopen = true;
+		this.checkifopen = true;
 		
 		//arraylist
 		String p1 = "playerone";
@@ -46,9 +46,11 @@ public class Lobby extends BasicGameState {
 		if (Menu.menuHost == true){  //not working
 			StartGame.draw(400, 510);
 			}
+		
 		if(checkifopen == false){
 			closed.draw(620, 510);
 		}else{
+			// checkifopen = true;
 			open.draw(620, 510);
 		}
 		
@@ -67,11 +69,12 @@ public class Lobby extends BasicGameState {
 		//Open close lobby button
 		if(Menu.menuHost == true){
 			if ((posX > 620 && posX < 820) && (posY > 150 && posY < 190)) {
-				if (Mouse.isButtonDown(0) && checkifopen == true ) {
+				if (Mouse.isButtonDown(0) && checkifopen == false ) {
 					
-					checkifopen = false;
-					
+					checkifopen = true;
 				}
+			}else if (checkifopen == true){
+				checkifopen = false;
 			}
 			}
 

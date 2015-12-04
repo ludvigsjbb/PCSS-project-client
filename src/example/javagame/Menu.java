@@ -22,7 +22,7 @@ public class Menu extends BasicGameState {
 	
 	public Menu(int state) {	
 		
-		this.host = false;
+		host = false;
 	}
 	
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
